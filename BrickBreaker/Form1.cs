@@ -206,120 +206,140 @@ namespace BrickBreaker
             {
                 ballYspeed *= -1;
                 ballY = redBricky + brickHeight + 1;
+                playerScore += 2;
             }
             
             if (ballRec.IntersectsWith(blueRec))
             {
                 ballYspeed *= -1;
                 ballY = blueBricky + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(greenRec))
             {
                 ballYspeed *= -1;
                 ballY = greenBricky + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(orangeRec))
             {
                 ballYspeed *= -1;
                 ballY = orangeBricky + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(goldRec))
             {
                 ballYspeed *= -1;
                 ballY = goldBricky + brickHeight + 1;
+                playerScore += 10;
             }
 
             if (ballRec.IntersectsWith(red2Rec))
             {
                 ballYspeed *= -1;
                 ballY = redBrick2y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(blue2Rec))
             {
                 ballYspeed *= -1;
                 ballY = blueBrick2y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(green2Rec))
             {
                 ballYspeed *= -1;
                 ballY = greenBrick2y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(orange2Rec))
             {
                 ballYspeed *= -1;
                 ballY = orangeBrick2y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(gold2Rec))
             {
                 ballYspeed *= -1;
                 ballY = goldBrick2y + brickHeight + 1;
+                playerScore += 10;
             }
 
             if (ballRec.IntersectsWith(red3Rec))
             {
                 ballYspeed *= -1;
                 ballY = redBrick3y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(blue3Rec))
             {
                 ballYspeed *= -1;
                 ballY = blueBrick3y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(green3Rec))
             {
                 ballYspeed *= -1;
                 ballY = greenBrick3y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(orange3Rec))
             {
                 ballYspeed *= -1;
                 ballY = orangeBrick3y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(gold3Rec))
             {
                 ballYspeed *= -1;
                 ballY = goldBrick3y + brickHeight + 1;
+                playerScore += 10;
             }
 
             if (ballRec.IntersectsWith(red4Rec))
             {
                 ballYspeed *= -1;
                 ballY = redBrick4y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(blue4Rec))
             {
                 ballYspeed *= -1;
                 ballY = blueBrick4y + brickHeight + 1;
+                playerScore += 2;
             }
 
             if (ballRec.IntersectsWith(green4Rec))
             {
                 ballYspeed *= -1;
                 ballY = greenBrick4y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(orange4Rec))
             {
                 ballYspeed *= -1;
                 ballY = orangeBrick4y + brickHeight + 1;
+                playerScore += 5;
             }
 
             if (ballRec.IntersectsWith(gold4Rec))
             {
                 ballYspeed *= -1;
                 ballY = goldBrick4y + brickHeight + 1;
+                playerScore += 10;
             }
 
             // if no lives remain, stop program
