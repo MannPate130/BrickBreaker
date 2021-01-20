@@ -149,13 +149,13 @@ namespace BrickBreaker
                 playerPaddlex += paddleSpeed;
             }
 
-            // Top wall collision
+            // Top collision
             if (ballY < 0)
             {
                 ballYspeed *= -1;
-
             }
 
+            // bottom collision
             if (ballY > this.Height - ballHeight)
             {
                 playerScore--;
@@ -322,6 +322,7 @@ namespace BrickBreaker
                 ballY = goldBrick4y + brickHeight + 1;
             }
 
+            // if no lives remain, stop program
             if (playerLives == 0)
             {
                 brickBreakertimer.Enabled = false;
@@ -332,32 +333,40 @@ namespace BrickBreaker
 
         private void brickBreaker_Paint(object sender, PaintEventArgs e)
         {
+            // create paddle 
             e.Graphics.FillRectangle(whiteBrush, playerPaddlex, playerPaddley, paddleWidth, paddleHeight);
 
+            //create ball
             e.Graphics.FillEllipse(whiteBrush, ballX, ballY, ballWidth, ballHeight);
 
+            // show player score 
             e.Graphics.DrawString($"Score: {playerScore}", screenFont, whiteBrush, 10, 10);
 
+            // show amount of lives remaining
             e.Graphics.DrawString($"Lives: {playerLives}", screenFont, whiteBrush, 220, 10);
 
+            // first layer of bricks
             e.Graphics.FillRectangle(redBrush, redBrickx, redBricky, brickWidth, brickHeight);
             e.Graphics.FillRectangle(blueBrush, blueBrickx, blueBricky, brickWidth, brickHeight);
             e.Graphics.FillRectangle(greenBrush, greenBrickx, greenBricky, brickWidth, brickHeight);
             e.Graphics.FillRectangle(orangeBrush, orangeBrickx, orangeBricky, brickWidth, brickHeight);
             e.Graphics.FillRectangle(goldBrush, goldBrickx, goldBricky, brickWidth, brickHeight);
 
+            // second layer of bricks
             e.Graphics.FillRectangle(redBrush, redBrick2x, redBrick2y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(blueBrush, blueBrick2x, blueBrick2y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(greenBrush, greenBrick2x, greenBrick2y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(orangeBrush, orangeBrick2x, orangeBrick2y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(goldBrush, goldBrick2x, goldBrick2y, brickWidth, brickHeight);
 
+            // third layer of bricks
             e.Graphics.FillRectangle(redBrush, redBrick3x, redBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(blueBrush, blueBrick3x, blueBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(greenBrush, greenBrick3x, greenBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(orangeBrush, orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(goldBrush, goldBrick3x, goldBrick3y, brickWidth, brickHeight);
 
+            // fourth layer of bricks
             e.Graphics.FillRectangle(redBrush, redBrick4x, redBrick4y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(blueBrush, blueBrick4x, blueBrick4y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
