@@ -21,8 +21,8 @@ namespace BrickBreaker
         int paddleHeight = 10;
         int paddleSpeed = 9;
 
-        int ballX = 160;
-        int ballY = 260;
+        int ballX = 150;
+        int ballY = 270;
         int ballXspeed = 7;
         int ballYspeed = -7;
         int ballHeight = 10;
@@ -72,6 +72,21 @@ namespace BrickBreaker
 
         int goldBrick3x = 190;
         int goldBrick3y = 180;
+
+        int redBrick4x = 70;
+        int redBrick4y = 220;
+
+        int blueBrick4x = 190;
+        int blueBrick4y = 220;
+
+        int greenBrick4x = 250;
+        int greenBrick4y = 220;
+
+        int orangeBrick4x = 10;
+        int orangeBrick4y = 220;
+
+        int goldBrick4x = 130;
+        int goldBrick4y = 220;
 
         int brickWidth = 50;
         int brickHeight = 30;
@@ -145,8 +160,8 @@ namespace BrickBreaker
             {
                 playerScore--;
                 playerLives--;
-                ballX = 160;
-                ballY = 260;
+                ballX = 150;
+                ballY = 270;
 
                 playerPaddlex = 130;
                 playerPaddley = 430;
@@ -175,6 +190,11 @@ namespace BrickBreaker
             Rectangle green3Rec = new Rectangle(greenBrick3x, greenBrick3y, brickWidth, brickHeight);
             Rectangle orange3Rec = new Rectangle(orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
             Rectangle gold3Rec = new Rectangle(goldBrick3x, goldBrick3y, brickWidth, brickHeight);
+            Rectangle red4Rec = new Rectangle(redBrick4x, redBrick4y, brickWidth, brickHeight);
+            Rectangle blue4Rec = new Rectangle(blueBrick4x, blueBrick4y, brickWidth, brickHeight);
+            Rectangle green4Rec = new Rectangle(greenBrick4x, greenBrick4y, brickWidth, brickHeight);
+            Rectangle orange4Rec = new Rectangle(orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
+            Rectangle gold4Rec = new Rectangle(goldBrick4x, goldBrick4y, brickWidth, brickHeight);
 
             if (playerRec.IntersectsWith(ballRec))
             {
@@ -272,6 +292,35 @@ namespace BrickBreaker
                 ballY = goldBrick3y + brickHeight + 1;
             }
 
+            if (ballRec.IntersectsWith(red4Rec))
+            {
+                ballYspeed *= -1;
+                ballY = redBrick4y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(blue4Rec))
+            {
+                ballYspeed *= -1;
+                ballY = blueBrick4y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(green4Rec))
+            {
+                ballYspeed *= -1;
+                ballY = greenBrick4y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(orange4Rec))
+            {
+                ballYspeed *= -1;
+                ballY = orangeBrick4y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(gold4Rec))
+            {
+                ballYspeed *= -1;
+                ballY = goldBrick4y + brickHeight + 1;
+            }
 
             if (playerLives == 0)
             {
@@ -308,6 +357,14 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(greenBrush, greenBrick3x, greenBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(orangeBrush, orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(goldBrush, goldBrick3x, goldBrick3y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(redBrush, redBrick4x, redBrick4y, brickWidth, brickHeight);
+            e.Graphics.FillRectangle(blueBrush, blueBrick4x, blueBrick4y, brickWidth, brickHeight);
+            e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
+            e.Graphics.FillRectangle(orangeBrush, orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
+            e.Graphics.FillRectangle(goldBrush, goldBrick4x, goldBrick4y, brickWidth, brickHeight);
+
+
         }
     }
 }
