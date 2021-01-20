@@ -12,7 +12,7 @@ namespace BrickBreaker
 {
     public partial class brickBreaker : Form
     {
-        int playerPaddlex = 200;
+        int playerPaddlex = 130;
         int playerPaddley = 430;
         int playerScore = 0;
         int playerLives = 3;
@@ -21,8 +21,8 @@ namespace BrickBreaker
         int paddleHeight = 10;
         int paddleSpeed = 9;
 
-        int ballX = 250;
-        int ballY = 200;
+        int ballX = 160;
+        int ballY = 260;
         int ballXspeed = 7;
         int ballYspeed = -7;
         int ballHeight = 10;
@@ -43,8 +43,38 @@ namespace BrickBreaker
         int goldBrickx = 250;
         int goldBricky = 100;
 
+        int redBrick2x = 130;
+        int redBrick2y = 140;
+
+        int blueBrick2x = 190;
+        int blueBrick2y = 140;
+
+        int greenBrick2x = 10;
+        int greenBrick2y = 140;
+
+        int orangeBrick2x = 250;
+        int orangeBrick2y = 140;
+
+        int goldBrick2x = 70;
+        int goldBrick2y = 140;
+
+        int redBrick3x = 250;
+        int redBrick3y = 180;
+
+        int blueBrick3x = 10;
+        int blueBrick3y = 180;
+
+        int greenBrick3x = 70;
+        int greenBrick3y = 180;
+
+        int orangeBrick3x = 130;
+        int orangeBrick3y = 180;
+
+        int goldBrick3x = 190;
+        int goldBrick3y = 180;
+
         int brickWidth = 50;
-        int brickHeight = 20;
+        int brickHeight = 30;
 
         bool leftDown = false;
         bool rightDown = false;
@@ -116,10 +146,10 @@ namespace BrickBreaker
             {
                 playerScore--;
                 playerLives--;
-                ballX = 250;
-                ballY = 200;
+                ballX = 160;
+                ballY = 260;
 
-                playerPaddlex = 200;
+                playerPaddlex = 130;
                 playerPaddley = 430;
             }
 
@@ -136,6 +166,16 @@ namespace BrickBreaker
             Rectangle greenRec = new Rectangle(greenBrickx, greenBricky, brickWidth, brickHeight);
             Rectangle orangeRec = new Rectangle(orangeBrickx, orangeBricky, brickWidth, brickHeight);
             Rectangle goldRec = new Rectangle(goldBrickx, goldBricky, brickWidth, brickHeight);
+            Rectangle red2Rec = new Rectangle(redBrick2x, redBrick2y, brickWidth, brickHeight);
+            Rectangle blue2Rec = new Rectangle(blueBrick2x, blueBrick2y, brickWidth, brickHeight);
+            Rectangle green2Rec = new Rectangle(greenBrick2x, greenBrick2y, brickWidth, brickHeight);
+            Rectangle orange2Rec = new Rectangle(orangeBrick2x, orangeBrick2y, brickWidth, brickHeight);
+            Rectangle gold2Rec = new Rectangle(goldBrick2x, goldBrick2y, brickWidth, brickHeight);
+            Rectangle red3Rec = new Rectangle(redBrick3x, redBrick3y, brickWidth, brickHeight);
+            Rectangle blue3Rec = new Rectangle(blueBrick3x, blueBrick3y, brickWidth, brickHeight);
+            Rectangle green3Rec = new Rectangle(greenBrick3x, greenBrick3y, brickWidth, brickHeight);
+            Rectangle orange3Rec = new Rectangle(orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
+            Rectangle gold3Rec = new Rectangle(goldBrick3x, goldBrick3y, brickWidth, brickHeight);
 
             if (playerRec.IntersectsWith(ballRec))
             {
@@ -173,6 +213,67 @@ namespace BrickBreaker
                 ballY = goldBricky + brickHeight + 1;
             }
 
+            if (ballRec.IntersectsWith(red2Rec))
+            {
+                ballYspeed *= -1;
+                ballY = redBrick2y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(blue2Rec))
+            {
+                ballYspeed *= -1;
+                ballY = blueBrick2y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(green2Rec))
+            {
+                ballYspeed *= -1;
+                ballY = greenBrick2y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(orange2Rec))
+            {
+                ballYspeed *= -1;
+                ballY = orangeBrick2y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(gold2Rec))
+            {
+                ballYspeed *= -1;
+                ballY = goldBrick2y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(red3Rec))
+            {
+                ballYspeed *= -1;
+                ballY = redBrick3y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(blue3Rec))
+            {
+                ballYspeed *= -1;
+                ballY = blueBrick3y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(green3Rec))
+            {
+                ballYspeed *= -1;
+                ballY = greenBrick3y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(orange3Rec))
+            {
+                ballYspeed *= -1;
+                ballY = orangeBrick3y + brickHeight + 1;
+            }
+
+            if (ballRec.IntersectsWith(gold3Rec))
+            {
+                ballYspeed *= -1;
+                ballY = goldBrick3y + brickHeight + 1;
+            }
+
+
             if (playerLives == 0)
             {
                 brickBreakertimer.Enabled = false;
@@ -197,9 +298,29 @@ namespace BrickBreaker
 
             e.Graphics.FillEllipse(whiteBrush, ballX, ballY, ballWidth, ballHeight);
 
-            e.Graphics.DrawString($"Score: {playerScore}", screenFont, whiteBrush, 80, 10);
+            e.Graphics.DrawString($"Score: {playerScore}", screenFont, whiteBrush, 10, 10);
 
-            e.Graphics.DrawString($"Lives: {playerLives}", screenFont, whiteBrush, 320, 10);
+            e.Graphics.DrawString($"Lives: {playerLives}", screenFont, whiteBrush, 220, 10);
+
+            e.Graphics.FillRectangle(redBrush, redBrick2x, redBrick2y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(blueBrush, blueBrick2x, blueBrick2y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(greenBrush, greenBrick2x, greenBrick2y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(orangeBrush, orangeBrick2x, orangeBrick2y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(goldBrush, goldBrick2x, goldBrick2y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(redBrush, redBrick3x, redBrick3y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(blueBrush, blueBrick3x, blueBrick3y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(greenBrush, greenBrick3x, greenBrick3y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(orangeBrush, orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
+
+            e.Graphics.FillRectangle(goldBrush, goldBrick3x, goldBrick3y, brickWidth, brickHeight);
         }
     }
 }
