@@ -484,6 +484,7 @@ namespace BrickBreaker
         {
             if (gameState == "waiting")
             {
+                brickBreakertimer.Enabled = false;
                 titleLabel.Text = "BRICK BREAKER";
                 subTitle.Text = "Press Enter to Start or Escape to Exit";
             }
