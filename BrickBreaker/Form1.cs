@@ -17,15 +17,18 @@ namespace BrickBreaker
 {
     public partial class brickBreaker : Form
     {
+        // player paddle location, player lives, and player score
         int playerPaddlex = 130;
         int playerPaddley = 430;
         int playerScore = 0;
         int playerLives = 3;
 
+        // paddle dimensions
         int paddleWidth = 60;
         int paddleHeight = 10;
         int paddleSpeed = 9;
 
+        // ball location, speed, and dimensions
         int ballX = 150;
         int ballY = 270;
         int ballXspeed = 7;
@@ -33,6 +36,7 @@ namespace BrickBreaker
         int ballHeight = 10;
         int ballWidth = 10;
 
+        // bricks and their locations
         int redBrickx = 10;
         int redBricky = 100;
 
@@ -99,6 +103,7 @@ namespace BrickBreaker
         bool leftDown = false;
         bool rightDown = false;
 
+        // drawing objects
         SolidBrush whiteBrush = new SolidBrush(Color.White);
         Font screenFont = new Font("Consolas", 12);
         Pen pen = new Pen(Color.White);
@@ -108,6 +113,7 @@ namespace BrickBreaker
         SolidBrush orangeBrush = new SolidBrush(Color.Orange);
         SolidBrush goldBrush = new SolidBrush(Color.Gold);
 
+        // media (sounds)
         SoundPlayer strikerHit = new SoundPlayer(Properties.Resources.PaddleHit);
         SoundPlayer brickBreak = new SoundPlayer(Properties.Resources.BrickBreak);
         SoundPlayer gameOver = new SoundPlayer(Properties.Resources.GameOver);
@@ -142,6 +148,7 @@ namespace BrickBreaker
 
         private void brickBreaker_KeyDown(object sender, KeyEventArgs e)
         {
+            // using keycode for paddle movement, escaping program, and entering program
             switch (e.KeyCode)
             {
                 case Keys.Left:
@@ -180,9 +187,11 @@ namespace BrickBreaker
 
         private void brickBreakertimer_Tick(object sender, EventArgs e)
         {
+            // ball movement
             ballX -= ballXspeed;
             ballY -= ballYspeed;
 
+            // moves player paddle left and right
             if (leftDown == true && playerPaddlex > 0)
             {
                 playerPaddlex -= paddleSpeed;
@@ -218,6 +227,7 @@ namespace BrickBreaker
                 ballXspeed *= -1;
             }
 
+            // drawing the rectangle for paddle, ball,and bricks
             Rectangle playerRec = new Rectangle(playerPaddlex, playerPaddley, paddleWidth, paddleHeight);
             Rectangle ballRec = new Rectangle(ballX, ballY, ballWidth, ballHeight);
             Rectangle redRec = new Rectangle(redBrickx, redBricky, brickWidth, brickHeight);
@@ -241,6 +251,7 @@ namespace BrickBreaker
             Rectangle orange4Rec = new Rectangle(orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
             Rectangle gold4Rec = new Rectangle(goldBrick4x, goldBrick4y, brickWidth, brickHeight);
 
+            // ball and player paddle interaction
             if (playerRec.IntersectsWith(ballRec))
             {
                 strikerHit.Play();
@@ -248,6 +259,7 @@ namespace BrickBreaker
                 ballY = playerPaddley - paddleHeight - 1;
             }
 
+            // ball and brick interaction
             if (ballRec.IntersectsWith(redRec))
             {
                 brickBreak.Play();
@@ -468,6 +480,7 @@ namespace BrickBreaker
                 goldBrick4y = -100;
             }
 
+            // tells the game to stop if score is 93 or above and goes to ending procedures
             if (playerScore >= 93)
             {
                 brickBreakertimer.Enabled = false;
@@ -486,6 +499,7 @@ namespace BrickBreaker
 
         private void brickBreaker_Paint(object sender, PaintEventArgs e)
         {
+            // title screen
             if (gameState == "waiting")
             {
                 brickBreakertimer.Enabled = false;
@@ -541,7 +555,7 @@ namespace BrickBreaker
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";
 
-                subTitle.Text = $"Your final score was {playerScore} \n Press The Escape Button to Exit";
+                subTitle.Text = $"Your final score was {playerScore} \n Press The Enter Button to Play Again or The Escape Button to Exit";
             }
 
 
