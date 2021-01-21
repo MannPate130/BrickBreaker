@@ -402,6 +402,11 @@ namespace BrickBreaker
                 goldBrick4y = -100;
             }
 
+            if (playerScore > 92)
+            {
+                brickBreakertimer.Enabled = false;
+            }
+
             // if no lives remain, stop program
             if (playerLives == 0)
             {
