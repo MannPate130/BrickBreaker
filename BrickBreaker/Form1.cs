@@ -1,4 +1,8 @@
-﻿using System;
+﻿/// Created by : Mann Patel 
+/// Date       : January 21, 2021
+/// Description: A Fun Remake of Classic Brick Breaker Game
+
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
