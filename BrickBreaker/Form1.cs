@@ -7,6 +7,7 @@ using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Media;
 
 namespace BrickBreaker
 {
@@ -103,6 +104,8 @@ namespace BrickBreaker
         SolidBrush orangeBrush = new SolidBrush(Color.Orange);
         SolidBrush goldBrush = new SolidBrush(Color.Gold);
 
+        SoundPlayer strikerHit = new SoundPlayer(Properties.Resources.PaddleHit);
+
         public brickBreaker()
         {
             InitializeComponent();
@@ -198,6 +201,7 @@ namespace BrickBreaker
 
             if (playerRec.IntersectsWith(ballRec))
             {
+                strikerHit.Play();
                 ballYspeed *= -1;
                 ballY = playerPaddley - paddleHeight - 1;
             }
