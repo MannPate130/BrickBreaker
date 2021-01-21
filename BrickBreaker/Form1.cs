@@ -106,9 +106,31 @@ namespace BrickBreaker
 
         SoundPlayer strikerHit = new SoundPlayer(Properties.Resources.PaddleHit);
 
+        string gameState = "waiting";
+
         public brickBreaker()
         {
             InitializeComponent();
+        }
+
+        public void GameInitialize()
+        {
+            titleLabel.Text = "";
+            subTitle.Text = "";
+            titleLabel.Visible = false;
+            subTitle.Visible = false;
+
+            brickBreakertimer.Enabled = true;
+            gameState = "running";
+            playerLives = 3;
+            playerScore = 0;
+            ballX = 150;
+            ballY = 270;
+            ballXspeed = 7;
+            ballYspeed = -7;
+
+            playerPaddlex = this.Width / 2 - paddleWidth / 2;
+            playerPaddley = 430;
         }
 
         private void brickBreaker_KeyDown(object sender, KeyEventArgs e)
@@ -120,6 +142,18 @@ namespace BrickBreaker
                     break;
                 case Keys.Right:
                     rightDown = true; 
+                    break;
+                case Keys.Enter:
+                    if (gameState == "waiting" || gameState == "over")
+                    {
+                        GameInitialize();
+                    }
+                    break;
+                case Keys.Escape:
+                    if (gameState == "waiting" || gameState == "over")
+                    {
+                        Application.Exit();
+                    }
                     break;
             }
         }
@@ -409,12 +443,14 @@ namespace BrickBreaker
             if (playerScore > 92)
             {
                 brickBreakertimer.Enabled = false;
+                gameState = "over";
             }
 
             // if no lives remain, stop program
             if (playerLives == 0)
             {
                 brickBreakertimer.Enabled = false;
+                gameState = "over";
             }
 
             Refresh();
@@ -422,45 +458,64 @@ namespace BrickBreaker
 
         private void brickBreaker_Paint(object sender, PaintEventArgs e)
         {
-            // create paddle 
-            e.Graphics.FillRectangle(whiteBrush, playerPaddlex, playerPaddley, paddleWidth, paddleHeight);
+            if (gameState == "waiting")
+            {
+                titleLabel.Text = "BRICK BREAKER";
+                subTitle.Text = "Press Enter to Start or Escape to Exit";
+            }
+            else if (gameState == "running")
+            {
+                // create paddle 
+                e.Graphics.FillRectangle(whiteBrush, playerPaddlex, playerPaddley, paddleWidth, paddleHeight);
 
-            //create ball
-            e.Graphics.FillEllipse(whiteBrush, ballX, ballY, ballWidth, ballHeight);
+                //create ball
+                e.Graphics.FillEllipse(whiteBrush, ballX, ballY, ballWidth, ballHeight);
 
-            // show player score 
-            e.Graphics.DrawString($"Score: {playerScore}", screenFont, whiteBrush, 10, 10);
+                // show player score 
+                e.Graphics.DrawString($"Score: {playerScore}", screenFont, whiteBrush, 10, 10);
 
-            // show amount of lives remaining
-            e.Graphics.DrawString($"Lives: {playerLives}", screenFont, whiteBrush, 220, 10);
+                // show amount of lives remaining
+                e.Graphics.DrawString($"Lives: {playerLives}", screenFont, whiteBrush, 220, 10);
 
-            // first layer of bricks
-            e.Graphics.FillRectangle(redBrush, redBrickx, redBricky, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(blueBrush, blueBrickx, blueBricky, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(greenBrush, greenBrickx, greenBricky, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(orangeBrush, orangeBrickx, orangeBricky, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(goldBrush, goldBrickx, goldBricky, brickWidth, brickHeight);
+                // first layer of bricks
+                e.Graphics.FillRectangle(redBrush, redBrickx, redBricky, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(blueBrush, blueBrickx, blueBricky, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(greenBrush, greenBrickx, greenBricky, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(orangeBrush, orangeBrickx, orangeBricky, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(goldBrush, goldBrickx, goldBricky, brickWidth, brickHeight);
 
-            // second layer of bricks
-            e.Graphics.FillRectangle(redBrush, redBrick2x, redBrick2y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(blueBrush, blueBrick2x, blueBrick2y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(greenBrush, greenBrick2x, greenBrick2y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(orangeBrush, orangeBrick2x, orangeBrick2y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(goldBrush, goldBrick2x, goldBrick2y, brickWidth, brickHeight);
+                // second layer of bricks
+                e.Graphics.FillRectangle(redBrush, redBrick2x, redBrick2y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(blueBrush, blueBrick2x, blueBrick2y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(greenBrush, greenBrick2x, greenBrick2y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(orangeBrush, orangeBrick2x, orangeBrick2y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(goldBrush, goldBrick2x, goldBrick2y, brickWidth, brickHeight);
 
-            // third layer of bricks
-            e.Graphics.FillRectangle(redBrush, redBrick3x, redBrick3y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(blueBrush, blueBrick3x, blueBrick3y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(greenBrush, greenBrick3x, greenBrick3y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(orangeBrush, orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(goldBrush, goldBrick3x, goldBrick3y, brickWidth, brickHeight);
+                // third layer of bricks
+                e.Graphics.FillRectangle(redBrush, redBrick3x, redBrick3y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(blueBrush, blueBrick3x, blueBrick3y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(greenBrush, greenBrick3x, greenBrick3y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(orangeBrush, orangeBrick3x, orangeBrick3y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(goldBrush, goldBrick3x, goldBrick3y, brickWidth, brickHeight);
 
-            // fourth layer of bricks
-            e.Graphics.FillRectangle(redBrush, redBrick4x, redBrick4y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(blueBrush, blueBrick4x, blueBrick4y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(orangeBrush, orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
-            e.Graphics.FillRectangle(goldBrush, goldBrick4x, goldBrick4y, brickWidth, brickHeight);
+                // fourth layer of bricks
+                e.Graphics.FillRectangle(redBrush, redBrick4x, redBrick4y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(blueBrush, blueBrick4x, blueBrick4y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(orangeBrush, orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
+                e.Graphics.FillRectangle(goldBrush, goldBrick4x, goldBrick4y, brickWidth, brickHeight);
+            }
+            else if (gameState == "over")
+            {
+                titleLabel.Visible = true;
+                subTitle.Visible = true;
+                titleLabel.Text = "GAME OVER!";
+
+                subTitle.Text = $"Your final score was {playerScore}";
+                subTitle.Text += "\nPress Space Bar to Start or Escape to Exit";
+            }
+
+
         }
     }
 }
