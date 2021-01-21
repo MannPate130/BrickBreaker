@@ -207,6 +207,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = redBricky + brickHeight + 1;
                 playerScore += 2;
+
+                redBrickx = 10;
+                redBricky = -100;
             }
             
             if (ballRec.IntersectsWith(blueRec))
@@ -214,6 +217,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = blueBricky + brickHeight + 1;
                 playerScore += 2;
+
+                blueBrickx = 10;
+                blueBricky = -100;
             }
 
             if (ballRec.IntersectsWith(greenRec))
@@ -221,6 +227,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = greenBricky + brickHeight + 1;
                 playerScore += 5;
+
+                greenBrickx = 10;
+                greenBricky = -100;
             }
 
             if (ballRec.IntersectsWith(orangeRec))
@@ -228,6 +237,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = orangeBricky + brickHeight + 1;
                 playerScore += 5;
+
+                orangeBrickx = 10;
+                orangeBricky = -100;
             }
 
             if (ballRec.IntersectsWith(goldRec))
@@ -235,6 +247,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = goldBricky + brickHeight + 1;
                 playerScore += 10;
+
+                goldBrickx = 10;
+                goldBricky = -100;
             }
 
             if (ballRec.IntersectsWith(red2Rec))
@@ -242,6 +257,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = redBrick2y + brickHeight + 1;
                 playerScore += 2;
+
+                redBrick2x = 10;
+                redBrick2y = -100;
             }
 
             if (ballRec.IntersectsWith(blue2Rec))
@@ -249,6 +267,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = blueBrick2y + brickHeight + 1;
                 playerScore += 2;
+
+                blueBrick2x = 10;
+                blueBrick2y = -100;
             }
 
             if (ballRec.IntersectsWith(green2Rec))
@@ -256,6 +277,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = greenBrick2y + brickHeight + 1;
                 playerScore += 5;
+
+                greenBrick2x = 10;
+                greenBrick2y = -100;
             }
 
             if (ballRec.IntersectsWith(orange2Rec))
@@ -263,6 +287,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = orangeBrick2y + brickHeight + 1;
                 playerScore += 5;
+
+                orangeBrick2x = 10;
+                orangeBrick2y = -100;
             }
 
             if (ballRec.IntersectsWith(gold2Rec))
@@ -270,6 +297,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = goldBrick2y + brickHeight + 1;
                 playerScore += 10;
+
+                goldBrick2x = 10;
+                goldBrick2y = -100;
             }
 
             if (ballRec.IntersectsWith(red3Rec))
@@ -277,6 +307,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = redBrick3y + brickHeight + 1;
                 playerScore += 2;
+
+                redBrick3x = 10;
+                redBrick3y = -100;
             }
 
             if (ballRec.IntersectsWith(blue3Rec))
@@ -284,6 +317,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = blueBrick3y + brickHeight + 1;
                 playerScore += 2;
+
+                blueBrick3x = 10;
+                blueBrick3y = -100;
             }
 
             if (ballRec.IntersectsWith(green3Rec))
@@ -291,6 +327,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = greenBrick3y + brickHeight + 1;
                 playerScore += 5;
+
+                greenBrick3x = 10;
+                greenBrick3y = -100;
             }
 
             if (ballRec.IntersectsWith(orange3Rec))
@@ -298,6 +337,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = orangeBrick3y + brickHeight + 1;
                 playerScore += 5;
+
+                orangeBrick3x = 10;
+                orangeBrick3y = -100;
             }
 
             if (ballRec.IntersectsWith(gold3Rec))
@@ -305,6 +347,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = goldBrick3y + brickHeight + 1;
                 playerScore += 10;
+
+                goldBrick3x = 10;
+                goldBrick3y = -100;
             }
 
             if (ballRec.IntersectsWith(red4Rec))
@@ -312,6 +357,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = redBrick4y + brickHeight + 1;
                 playerScore += 2;
+
+                redBrick4x = 10;
+                redBrick4y = -100;
             }
 
             if (ballRec.IntersectsWith(blue4Rec))
@@ -319,6 +367,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = blueBrick4y + brickHeight + 1;
                 playerScore += 2;
+
+                blueBrick4x = 10;
+                blueBrick4y = -100;
             }
 
             if (ballRec.IntersectsWith(green4Rec))
@@ -326,6 +377,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = greenBrick4y + brickHeight + 1;
                 playerScore += 5;
+
+                greenBrick4x = 10;
+                greenBrick4y = -100;
             }
 
             if (ballRec.IntersectsWith(orange4Rec))
@@ -333,6 +387,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = orangeBrick4y + brickHeight + 1;
                 playerScore += 5;
+
+                orangeBrick4x = 10;
+                orangeBrick4y = -100;
             }
 
             if (ballRec.IntersectsWith(gold4Rec))
@@ -340,6 +397,9 @@ namespace BrickBreaker
                 ballYspeed *= -1;
                 ballY = goldBrick4y + brickHeight + 1;
                 playerScore += 10;
+
+                goldBrick4x = 10;
+                goldBrick4y = -100;
             }
 
             // if no lives remain, stop program
@@ -392,8 +452,6 @@ namespace BrickBreaker
             e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(orangeBrush, orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
             e.Graphics.FillRectangle(goldBrush, goldBrick4x, goldBrick4y, brickWidth, brickHeight);
-
-
         }
     }
 }
