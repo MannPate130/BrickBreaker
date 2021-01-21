@@ -555,7 +555,7 @@ namespace BrickBreaker
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";
 
-                subTitle.Text = $"Your final score was {playerScore} \n Press The Enter Button to Play Again or The Escape Button to Exit";
+                subTitle.Text = $"Your final score was {playerScore}! \n Press The Enter Button to Play Again or The Escape Button to Exit";
             }
 
 
