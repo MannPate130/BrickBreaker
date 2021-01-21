@@ -83,5 +83,11 @@
   <ItemGroup>
     <None Include="Resources\Puck hit sound.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICS3U - Final Project Background.jpg" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICS3U - Final Project Brick Sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>

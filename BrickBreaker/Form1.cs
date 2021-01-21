@@ -105,6 +105,7 @@ namespace BrickBreaker
         SolidBrush goldBrush = new SolidBrush(Color.Gold);
 
         SoundPlayer strikerHit = new SoundPlayer(Properties.Resources.PaddleHit);
+        SoundPlayer brickBreak = new SoundPlayer(Properties.Resources.BrickBreak);
 
         string gameState = "waiting";
 
@@ -242,6 +243,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(redRec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = redBricky + brickHeight + 1;
                 playerScore += 2;
@@ -252,6 +254,7 @@ namespace BrickBreaker
             
             if (ballRec.IntersectsWith(blueRec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = blueBricky + brickHeight + 1;
                 playerScore += 2;
@@ -262,6 +265,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(greenRec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = greenBricky + brickHeight + 1;
                 playerScore += 5;
@@ -272,6 +276,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(orangeRec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = orangeBricky + brickHeight + 1;
                 playerScore += 5;
@@ -282,6 +287,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(goldRec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = goldBricky + brickHeight + 1;
                 playerScore += 10;
@@ -292,6 +298,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(red2Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = redBrick2y + brickHeight + 1;
                 playerScore += 2;
@@ -302,6 +309,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blue2Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = blueBrick2y + brickHeight + 1;
                 playerScore += 2;
@@ -312,6 +320,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(green2Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = greenBrick2y + brickHeight + 1;
                 playerScore += 5;
@@ -322,6 +331,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(orange2Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = orangeBrick2y + brickHeight + 1;
                 playerScore += 5;
@@ -332,6 +342,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(gold2Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = goldBrick2y + brickHeight + 1;
                 playerScore += 10;
@@ -342,6 +353,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(red3Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = redBrick3y + brickHeight + 1;
                 playerScore += 2;
@@ -352,6 +364,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blue3Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = blueBrick3y + brickHeight + 1;
                 playerScore += 2;
@@ -362,6 +375,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(green3Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = greenBrick3y + brickHeight + 1;
                 playerScore += 5;
@@ -372,6 +386,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(orange3Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = orangeBrick3y + brickHeight + 1;
                 playerScore += 5;
@@ -382,6 +397,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(gold3Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = goldBrick3y + brickHeight + 1;
                 playerScore += 10;
@@ -392,6 +408,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(red4Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = redBrick4y + brickHeight + 1;
                 playerScore += 2;
@@ -402,6 +419,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(blue4Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = blueBrick4y + brickHeight + 1;
                 playerScore += 2;
@@ -412,6 +430,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(green4Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = greenBrick4y + brickHeight + 1;
                 playerScore += 5;
@@ -422,6 +441,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(orange4Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = orangeBrick4y + brickHeight + 1;
                 playerScore += 5;
@@ -432,6 +452,7 @@ namespace BrickBreaker
 
             if (ballRec.IntersectsWith(gold4Rec))
             {
+                brickBreak.Play();
                 ballYspeed *= -1;
                 ballY = goldBrick4y + brickHeight + 1;
                 playerScore += 10;
@@ -440,7 +461,7 @@ namespace BrickBreaker
                 goldBrick4y = -100;
             }
 
-            if (playerScore > 92)
+            if (playerScore >= 93)
             {
                 brickBreakertimer.Enabled = false;
                 gameState = "over";
@@ -509,10 +530,9 @@ namespace BrickBreaker
             {
                 titleLabel.Visible = true;
                 subTitle.Visible = true;
-                titleLabel.Text = "GAME OVER!";
+                titleLabel.Text = "GAME OVER! \n Thank You For Playing";
 
-                subTitle.Text = $"Your final score was {playerScore}";
-                subTitle.Text += "\nPress Space Bar to Start or Escape to Exit";
+                subTitle.Text = $"Your final score was {playerScore} \n Press The Escape Button to Exit";
             }
 
 

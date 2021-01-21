@@ -47,16 +47,16 @@ namespace BrickBreaker
             this.titleLabel.ForeColor = System.Drawing.Color.DarkRed;
             this.titleLabel.Location = new System.Drawing.Point(36, 187);
             this.titleLabel.Name = "titleLabel";
-            this.titleLabel.Size = new System.Drawing.Size(400, 66);
+            this.titleLabel.Size = new System.Drawing.Size(400, 83);
             this.titleLabel.TabIndex = 0;
             this.titleLabel.Text = "label1";
             this.titleLabel.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
             // 
             // subTitle
             // 
-            this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 12F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.subTitle.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.subTitle.ForeColor = System.Drawing.Color.Aqua;
-            this.subTitle.Location = new System.Drawing.Point(43, 263);
+            this.subTitle.Location = new System.Drawing.Point(38, 298);
             this.subTitle.Name = "subTitle";
             this.subTitle.Size = new System.Drawing.Size(393, 53);
             this.subTitle.TabIndex = 1;
