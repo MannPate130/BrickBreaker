@@ -121,6 +121,12 @@
   <data name="BrickBreak" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\ICS3U - Final Project Brick Sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>
+  <data name="GameOver" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICS3U - Final Project GameOver.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
+  <data name="LoseLife" type="System.Resources.ResXFileRef, System.Windows.Forms">
+    <value>..\Resources\ICS3U - Final Project LoseLife.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
+  </data>
   <data name="PaddleHit" type="System.Resources.ResXFileRef, System.Windows.Forms">
     <value>..\Resources\Puck hit sound.wav;System.IO.MemoryStream, mscorlib, Version=4.0.0.0, Culture=neutral, PublicKeyToken=b77a5c561934e089</value>
   </data>

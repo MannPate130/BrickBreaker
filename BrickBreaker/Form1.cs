@@ -106,6 +106,8 @@ namespace BrickBreaker
 
         SoundPlayer strikerHit = new SoundPlayer(Properties.Resources.PaddleHit);
         SoundPlayer brickBreak = new SoundPlayer(Properties.Resources.BrickBreak);
+        SoundPlayer gameOver = new SoundPlayer(Properties.Resources.GameOver);
+        SoundPlayer lifeLose = new SoundPlayer(Properties.Resources.LoseLife);
 
         string gameState = "waiting";
 
@@ -196,6 +198,7 @@ namespace BrickBreaker
             // bottom collision
             if (ballY > this.Height - ballHeight)
             {
+                lifeLose.Play();
                 playerScore--;
                 playerLives--;
                 ballX = 150;
@@ -528,6 +531,7 @@ namespace BrickBreaker
             }
             else if (gameState == "over")
             {
+                gameOver.Play();
                 titleLabel.Visible = true;
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";

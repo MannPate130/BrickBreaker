@@ -89,5 +89,11 @@
   <ItemGroup>
     <None Include="Resources\ICS3U - Final Project Brick Sound.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICS3U - Final Project GameOver.wav" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICS3U - Final Project LoseLife.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
