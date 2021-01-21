@@ -31,8 +31,8 @@ namespace BrickBreaker
         // ball location, speed, and dimensions
         int ballX = 150;
         int ballY = 270;
-        int ballXspeed = 7;
-        int ballYspeed = -7;
+        int ballXspeed = 6;
+        int ballYspeed = -6;
         int ballHeight = 10;
         int ballWidth = 10;
 
@@ -139,8 +139,8 @@ namespace BrickBreaker
             playerScore = 0;
             ballX = 150;
             ballY = 270;
-            ballXspeed = 7;
-            ballYspeed = -7;
+            ballXspeed = 6;
+            ballYspeed = -6;
 
             redBrickx = 10;
             redBricky = 100;
