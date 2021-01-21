@@ -30,9 +30,9 @@ namespace BrickBreaker
 
         // ball location, speed, and dimensions
         int ballX = 150;
-        int ballY = 270;
-        int ballXspeed = 6;
-        int ballYspeed = -6;
+        int ballY = 410;
+        int ballXspeed = 7;
+        int ballYspeed = -7;
         int ballHeight = 10;
         int ballWidth = 10;
 
@@ -138,9 +138,9 @@ namespace BrickBreaker
             playerLives = 3;
             playerScore = 0;
             ballX = 150;
-            ballY = 270;
-            ballXspeed = 6;
-            ballYspeed = -6;
+            ballY = 410;
+            ballXspeed = 7;
+            ballYspeed = -7;
 
             redBrickx = 10;
             redBricky = 100;
@@ -232,7 +232,7 @@ namespace BrickBreaker
         {
             // ball movement
             ballX -= ballXspeed;
-            ballY -= ballYspeed;
+            ballY += ballYspeed;
 
             // moves player paddle left and right
             if (leftDown == true && playerPaddlex > 0)
@@ -257,6 +257,7 @@ namespace BrickBreaker
                 lifeLose.Play();
                 playerScore--;
                 playerLives--;
+                ballY -= ballYspeed;
                 ballX = 150;
                 ballY = 270;
 
