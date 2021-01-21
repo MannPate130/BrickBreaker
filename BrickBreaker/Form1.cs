@@ -557,8 +557,6 @@ namespace BrickBreaker
 
                 subTitle.Text = $"Your final score was {playerScore}! \n Press The Enter Button to Play Again or The Escape Button to Exit";
             }
-
-
         }
     }
 }
