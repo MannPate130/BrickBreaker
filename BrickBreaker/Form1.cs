@@ -525,7 +525,7 @@ namespace BrickBreaker
             }
 
             // tells the game to stop if score is 93 or above and goes to ending procedures
-            if (playerScore >= 93)
+            if (playerScore >= 94)
             {
                 brickBreakertimer.Enabled = false;
                 gameState = "over";
