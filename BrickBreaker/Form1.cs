@@ -599,7 +599,7 @@ namespace BrickBreaker
             else if (gameState == "over")
             {
                 gameOver.Play();
-                Thread.Sleep(3400);
+                Thread.Sleep(3600);
                 titleLabel.Visible = true;
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";
