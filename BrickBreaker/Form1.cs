@@ -1,5 +1,5 @@
-﻿/// Created by : Mann Patel 
-/// Date       : January 21, 2021
+﻿/// Created by:  Mann Patel 
+/// Date:        January 21, 2021
 /// Description: A Fun Remake of Classic Brick Breaker Game
 
 using System;
@@ -591,7 +591,7 @@ namespace BrickBreaker
                 e.Graphics.FillRectangle(greenBrush, greenBrick4x, greenBrick4y, brickWidth, brickHeight);
                 e.Graphics.FillRectangle(orangeBrush, orangeBrick4x, orangeBrick4y, brickWidth, brickHeight);
                 e.Graphics.FillRectangle(goldBrush, goldBrick4x, goldBrick4y, brickWidth, brickHeight);
-            }
+            } // displays at the end of the game
             else if (gameState == "over")
             {
                 gameOver.Play();
@@ -599,7 +599,7 @@ namespace BrickBreaker
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";
 
-                subTitle.Text = $"Your final score was {playerScore}! \n Press Enter Button to Play Again or Escape Button to Exit";
+                subTitle.Text = $"Your final score was {playerScore}! \n\n Press Enter Button to Play Again or Escape Button to Exit";
             }
         }
     }

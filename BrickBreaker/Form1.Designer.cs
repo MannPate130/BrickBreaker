@@ -58,7 +58,7 @@ namespace BrickBreaker
             this.subTitle.ForeColor = System.Drawing.Color.Aqua;
             this.subTitle.Location = new System.Drawing.Point(38, 298);
             this.subTitle.Name = "subTitle";
-            this.subTitle.Size = new System.Drawing.Size(393, 101);
+            this.subTitle.Size = new System.Drawing.Size(393, 131);
             this.subTitle.TabIndex = 1;
             this.subTitle.Text = "label1";
             this.subTitle.TextAlign = System.Drawing.ContentAlignment.MiddleCenter;
