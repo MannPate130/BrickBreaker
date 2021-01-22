@@ -12,6 +12,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 using System.Media;
+using System.Threading;
 
 namespace BrickBreaker
 {
@@ -118,6 +119,7 @@ namespace BrickBreaker
         SoundPlayer brickBreak = new SoundPlayer(Properties.Resources.BrickBreak);
         SoundPlayer gameOver = new SoundPlayer(Properties.Resources.GameOver);
         SoundPlayer lifeLose = new SoundPlayer(Properties.Resources.LoseLife);
+        SoundPlayer arcade = new SoundPlayer(Properties.Resources.ArcadeSound);
 
         string gameState = "waiting";
 
@@ -132,6 +134,7 @@ namespace BrickBreaker
             subTitle.Text = "";
             titleLabel.Visible = false;
             subTitle.Visible = false;
+            arcade.Stop();
 
             brickBreakertimer.Enabled = true;
             gameState = "running";
@@ -546,6 +549,7 @@ namespace BrickBreaker
             // title screen
             if (gameState == "waiting")
             {
+                arcade.Play();
                 brickBreakertimer.Enabled = false;
                 titleLabel.Text = "BRICK BREAKER";
                 subTitle.Text = "Press Enter to Start or Escape to Exit";
@@ -595,9 +599,11 @@ namespace BrickBreaker
             else if (gameState == "over")
             {
                 gameOver.Play();
+                Thread.Sleep(3400);
                 titleLabel.Visible = true;
                 subTitle.Visible = true;
                 titleLabel.Text = "GAME OVER! \n Thank You For Playing";
+                arcade.Play();
 
                 subTitle.Text = $"Your final score was {playerScore}! \n\n Press Enter Button to Play Again or Escape Button to Exit";
             }

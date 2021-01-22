@@ -95,5 +95,8 @@
   <ItemGroup>
     <None Include="Resources\ICS3U - Final Project LoseLife.wav" />
   </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\ICS3U - Final Project Arcade Sound.wav" />
+  </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
